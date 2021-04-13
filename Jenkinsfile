@@ -15,7 +15,7 @@ pipeline {
             
             script {
             if ( env.CHANGE_ID )   {
-            echo 'I will always say Hello again! test'
+            pullRequest.addLabel("working")
                 
             }
             }
