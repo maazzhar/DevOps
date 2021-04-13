@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
               sh "echo Hello"
-                sh "exit 1"
+               // sh "exit 1"
                 // 
             }
         }
@@ -12,7 +12,9 @@ pipeline {
     
     post { 
         success { 
+            if ( env.CHANGE_ID) {
             echo 'I will always say Hello again!'
+            }
         }
     }
 }
