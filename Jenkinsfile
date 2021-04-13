@@ -12,7 +12,7 @@ pipeline {
     
     post { 
         success { 
-            when {  { env.CHANGE_ID }  } {
+            when {  expression { env.CHANGE_ID }  } {
             echo 'I will always say Hello again!'
             }
         }
